@@ -1,4 +1,4 @@
-## TypeSQL
+ ## TypeSQL
 
 **TypeSQL** generates typesafe Typescript APIs from your SQL statements. Write your queries in raw SQL and TypeSQL generates the type-safe APIs to execute those queries.
 
@@ -79,15 +79,16 @@ npm install -g typesql-cli
 
 Options:
 
-| Option                 | Description                                                                                                      | Example                                                                                                 |
-| :--------------------- | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **client**             | Database client driver to use.                                                                                   | <ul><li>pg</li><li>mysql2</li><li>better-sqlite3</li><li>libsql</li><li>bun:sqlite</li><li>d1</li></ul> |
-| **databaseUri**        | Connection string for the database. Supports environment variables (`${VAR_NAME}`).                              | <ul><li>mysql://root:password@localhost/mydb</li><li>./database.sqlite</li></ul>                        |
-| **sqlDir**             | Directory where SQL queries are stored. Will search recursively by appending the `**/*.sql` glob pattern.        | `./src`                                                                                                 |
-| **authToken**          | Authentication token. Required **only for the `libsql` client**. Supports environment variables (`${VAR_NAME}`). |                                                                                                         |
-| **includeCrudTables**  | Generates `select`, `insert`, `update`, and `delete` queries for specified tables.                               | `['users', 'permissions', 'tags']`                                                                      |
-| **generateIndexFiles** | Whether to recursively generate index.ts barrel files in each output folder. Defaults to true if not specified.  | true                                                                                                    |
-| **ignoreFiles** | Glob pattern(s) for SQL files to ignore. Can be a single pattern or an array of patterns. | <ul><li>`"**/*-draft.sql"`</li><li>`["**/test-*.sql", "**/temp/**"]`</li></ul> |
+| Option                 | Description                                                                                                           | Example                                                                                                 |
+| :--------------------- |:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
+| **client**             | Database client driver to use.                                                                                        | <ul><li>pg</li><li>mysql2</li><li>better-sqlite3</li><li>libsql</li><li>bun:sqlite</li><li>d1</li></ul> |
+| **databaseUri**        | Connection string for the database. Supports environment variables (`${VAR_NAME}`).                                   | <ul><li>mysql://root:password@localhost/mydb</li><li>./database.sqlite</li></ul>                        |
+| **sqlDir**             | Directory where SQL queries are stored. Will search recursively by appending the `**/*.sql` glob pattern.             | `./src`                                                                                                 |
+| **authToken**          | Authentication token. Required **only for the `libsql` client**. Supports environment variables (`${VAR_NAME}`).      |                                                                                                         |
+| **includeCrudTables**  | Generates `select`, `insert`, `update`, and `delete` queries for specified tables.                                    | `['users', 'permissions', 'tags']`                                                                      |
+| **generateIndexFiles** | Whether to recursively generate index.ts barrel files in each output folder. Defaults to true if not specified.       | true                                                                                                    |
+| **ignoreFiles**        | Glob pattern(s) for SQL files to ignore. Can be a single pattern or an array of patterns.                             | <ul><li>`"**/*-draft.sql"`</li><li>`["**/test-*.sql", "**/temp/**"]`</li></ul>                          |
+| **lineEndings**        | Defines the line-endings to use in the generated files. If this option is omitted, it will default to the OS default. | <ul><li>`\n\r`</li><li>`\n`</li>                                                                        |
 
 To load variables from a `.env` file, pass the `--env-file` flag:
 ```sh

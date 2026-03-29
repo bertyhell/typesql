@@ -192,6 +192,11 @@ export type TypeSqlConfig = {
 	 * Example: "**\/*-draft.sql" or ["**\/*-draft.sql", "tests/**\/*.sql"]
 	 */
 	ignoreFiles?: string | string[];
+	/**
+	 * Line ending style to use in generated files.
+	 * Defaults to the OS line ending if not specified.
+	 */
+	lineEndings?: '\n' | '\r\n';
 };
 
 export type SqlGenOption = 'select' | 's' | 'insert' | 'i' | 'update' | 'u' | 'delete' | 'd';
