@@ -183,6 +183,11 @@ export type TypeSqlConfig = {
 	 */
 	schemas?: string[];
 	/**
+	 * Whether to recursively generate index.ts barrel files in each output folder.
+	 * Defaults to true if not specified.
+	 */
+	generateIndexFiles?: boolean;
+	/**
 	 * Optional glob pattern or list of glob patterns for SQL files to ignore.
 	 * Example: "**\/*-draft.sql" or ["**\/*-draft.sql", "tests/**\/*.sql"]
 	 */
