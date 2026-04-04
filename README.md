@@ -88,7 +88,7 @@ Options:
 | **includeCrudTables**  | Generates `select`, `insert`, `update`, and `delete` queries for specified tables.                                    | `['users', 'permissions', 'tags']`                                                                      |
 | **generateIndexFiles** | Whether to recursively generate index.ts barrel files in each output folder. Defaults to true if not specified.       | true                                                                                                    |
 | **ignoreFiles**        | Glob pattern(s) for SQL files to ignore. Can be a single pattern or an array of patterns.                             | <ul><li>`"**/*-draft.sql"`</li><li>`["**/test-*.sql", "**/temp/**"]`</li></ul>                          |
-| **lineEndings**        | Defines the line-endings to use in the generated files. If this option is omitted, it will default to the OS default. | <ul><li>`\n\r`</li><li>`\n`</li>                                                                        |
+| **endOfLine**         | End-of-line style to use in generated files. If this option is omitted, it will default to the OS default.           | <ul><li>`CRLF`</li><li>`LF`</li></ul>                                                                  |                                                                        |
 
 To load variables from a `.env` file, pass the `--env-file` flag:
 ```sh
